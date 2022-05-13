@@ -167,7 +167,7 @@
                             <li>Thành Tiền <span>218.000đ</span></li>
                             <li>Total <span>218.000đ</span></li>
                         </ul>
-                        <a href="#" class="primary-btn">TIẾN HÀNH KIỂM TRA</a>
+                        <a href="${pageContext.request.contextPath}/shop/ShowFormND" class="primary-btn">TIẾN HÀNH THANH TOAN</a>
                     </div>
                 </div>
             </div>

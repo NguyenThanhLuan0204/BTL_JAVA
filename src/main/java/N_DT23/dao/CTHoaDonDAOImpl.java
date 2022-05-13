@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import N_DT23.entity.ChiTietHoaDon;
+import N_DT23.entity.HoaDon;
 import N_DT23.entity.SanPham;
 
 @Repository
@@ -41,5 +42,13 @@ public class CTHoaDonDAOImpl implements CTHoaDonDAO {
 
         return dataList;
     }
+
+	@Override
+	public ChiTietHoaDon addCTHoaDon(ChiTietHoaDon hoaDon) {
+		  Session currentSession = sessionFactory.getCurrentSession();
+	        currentSession.saveOrUpdate(hoaDon);
+	        return hoaDon;
+		
+	}
 
 }

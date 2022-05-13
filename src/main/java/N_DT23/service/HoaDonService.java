@@ -6,4 +6,5 @@ import N_DT23.entity.HoaDon;
 
 public interface HoaDonService {
     public List<HoaDon> getDSHoaDon();
+    public HoaDon addHoaDon(HoaDon hoaDon);
 }

@@ -48,11 +48,20 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">Quản lý người dùng</h1>
+					<h1 class="h3 mb-2 text-gray-800">Thong tin  người dùng</h1>
 					<!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
                         For more information about DataTables, please visit the <a target="_blank"
                             href="https://datatables.net">official DataTables documentation</a>.</p> -->
-
+		<!-- <div class="card shadow mb-4">
+						<div class="card-header py-3 row" style="margin: 0">
+							<div class="col-4">
+								
+								<input type="button" value="Add"
+                           			onclick="window.location.href='showFormForAdd'; return false;" class="add-button"  />
+									
+							</div>
+								
+						</div>-->
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
 						<div class="card-header py-3 row" style="margin: 0">
@@ -94,13 +103,13 @@
 											<tr>
 												<td>${loop.index+1}</td>
 												<td>${user.maND}</td>
-												<td>${user.taiKhoan.tenDangNhap}</td>
 												<td>${user.tenND}</td>
+												<td>${user.taiKhoan.tenDangNhap}</td>
 												<td>${user.sdt}</td>
 												<td>${user.diaChi}</td>
 												<td class="text-center">
-													<button class="btn btn-warning btn-edit">Sửa</button>
-													<button class="btn btn-danger btn-delete">Xóa</button>
+													<button class="btn btn-warning btn-edit">*</button>
+													
 												</td>
 											</tr>
 										</c:forEach>

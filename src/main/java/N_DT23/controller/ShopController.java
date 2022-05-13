@@ -1,7 +1,11 @@
 package N_DT23.controller;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -9,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -21,6 +27,16 @@ import N_DT23.entity.*;
 public class ShopController {
 	@Autowired
 	private SanPhamService sanPhamService;
+	@Autowired
+	private NguoiDungService nguoiDungService;
+	@Autowired
+	private TaiKhoanService taiKhoanService;
+	@Autowired
+	private HoaDonService donService;
+	
+	@Autowired
+	private  CTHoaDonService ctHoaDonService;
+	
 	@RequestMapping("/shop-grid")
 	public String showShopGridPage(Model model) {
 		List<LoaiSanPham> dsLoaiSanPham = new ArrayList<LoaiSanPham>();
@@ -102,11 +118,55 @@ public class ShopController {
 
 		return "user/shop-grid";
 	}
-	@RequestMapping("/shopping-cart")
-	public String showShoppingCartPage() {
+	@GetMapping("/shopping-cart")
+	public String showShoppingCartPage(Model theModel) {
+//		NguoiDung dung=new NguoiDung();
+//		  theModel.addAttribute("nguoidung", dung);
 		return "user/shopping-cart";
 	}
 
+	@GetMapping("/ShowFormND")
+	public String showFormND(Model theModel) {
+		NguoiDung dung=new NguoiDung();
+		  theModel.addAttribute("nguoidung", dung);
+		return "user/formAddND";
+	}
+	
+	@PostMapping("/saveNguoiDung")
+    public String saveCustomer(@ModelAttribute("nguoidung") NguoiDung theSanPham) {
+        // save the customer using our service
+//		System.out.println(theSanPham.getTenSp());
+//		System.out.println(theSanPham.getMoTa());
+//		System.out.println(theSanPham.getSoLuongTon());
+//		System.out.println(theSanPham.getThuongHieu());
+//		System.out.println(theSanPham.getGiaSP());
+//		System.out.println(theSanPham.getSoLuongTon());
+//		
+//		sanPhamService.addSanPham(theSanPham);
+//		 double randomDouble = Math.random();
+//         randomDouble = randomDouble * 100 + 1;
+//         int randomInt = (int) randomDouble;
+//		String tdn=String.valueOf(randomInt);
+//		TaiKhoan khoan=new TaiKhoan(tdn,"TEST123");
+//		taiKhoanService.addTaiKhoan(khoan);
+		System.out.println(theSanPham.getTenND());
+		System.err.println(theSanPham.getDiaChi());
+		System.out.println(theSanPham.getSdt());
+//		NguoiDung nd2=new NguoiDung(theSanPham.getTenND(),theSanPham.getDiaChi(),theSanPham.getSdt(),khoan);
+//		
+//		 nguoiDungService.addNguoiDung(nd2);
+			
+			
+			LocalDate date=LocalDate.now();
+			double a=500000;
+			double b=600000;
+			
+        return "redirect:/";
+    }
+	
+	
+	
+	
 	@RequestMapping("/checkout")
 	public String showCheckoutPage() {
 		return "user/checkout";

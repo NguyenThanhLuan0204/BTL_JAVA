@@ -37,4 +37,11 @@ public class TaiKhoanDAOImpl implements TaiKhoanDAO {
         return dataList;
     }
 
+	@Override
+	public void addTaiKhoan(TaiKhoan khoan) {
+		  Session currentSession=sessionFactory.getCurrentSession();
+	        currentSession.saveOrUpdate(khoan);
+		
+	}
+
 }

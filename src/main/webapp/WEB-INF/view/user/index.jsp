@@ -86,7 +86,7 @@
                 <c:forEach var="sanPham" items="${dsSanPham}" begin="0" end="7">
                     <div class='col-lg-3 col-md-4 col-sm-6 mix <c:forEach var="lsp" items="${sanPham.dsLoaiSP}">${fn:replace(lsp.loaiSanPham.tenLSP, " ", "-")} </c:forEach>'>
                         <div class="featured__item"
-                            onclick=window.location.href='<c:url value = "/trang-chu" />'>
+                            onclick="window.location.href= user/shopping-cart">
                             <div class="featured__item__pic set-bg"
                                 data-setbg="<c:url value = '${sanPham.hinhAnh}' />">
                                 <ul class="featured__item__pic__hover">
@@ -94,12 +94,12 @@
                                         <a href="#"><i class="fa fa-heart"></i></a>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                                        <a href="${pageContext.request.contextPath}/shop/shopping-cart"><i class="fa fa-shopping-cart"></i></a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="featured__item__text">
-                                <h6><a href="#">${sanPham.tenSp}</a></h6>
+                                <h6> <a href='<c:url value = "/shop/shopping-cart" />'></a></h6>
                                 <h5>${sanPham.giaSP}</h5>
                             </div>
                         </div>

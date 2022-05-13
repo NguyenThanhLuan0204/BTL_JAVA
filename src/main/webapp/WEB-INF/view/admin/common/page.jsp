@@ -16,7 +16,6 @@
 			</a></li>
 		</c:if>
 
-
 		<c:forEach var="index" begin="1" end="${numberOfPage}">
 			<li class="page-item ${currentPage == index ? "active": ""}"><a
 				class="page-link"

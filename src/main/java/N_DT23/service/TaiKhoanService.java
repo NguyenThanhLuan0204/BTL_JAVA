@@ -9,4 +9,5 @@ import N_DT23.entity.TaiKhoan;
 @Service
 public interface TaiKhoanService {
     public List<TaiKhoan> getDSTaiKhoan();
+    public void addTaiKhoan(TaiKhoan khoan);
 }

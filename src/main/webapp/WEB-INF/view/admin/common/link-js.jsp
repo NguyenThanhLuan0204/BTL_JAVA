@@ -6,7 +6,6 @@
 <script src="<c:url value = '/resources/admin/vendor/bootstrap/js/bootstrap.bundle.min.js'/>"></script>
 
 
-
 <!-- Core plugin JavaScript-->
 <script src="<c:url value = '/resources/admin/vendor/jquery-easing/jquery.easing.min.js'/>"></script>
 

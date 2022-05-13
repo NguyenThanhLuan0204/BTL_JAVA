@@ -32,6 +32,7 @@
                         <span> 
                         User: <security:authentication
 						property="principal.username" />
+					 		
 					 	</span>
 					 	<form:form action="${pageContext.request.contextPath}/logout"
 							method="POST">
@@ -40,9 +41,7 @@
 						</form:form>
                        </security:authorize>
 						<security:authorize access="hasAnyRole('ADMIN')">
-						<Button>
-							<a href="${pageContext.request.contextPath}/admin" style="color:#000000">Quản lý admin</a>
-						</Button>
+							&nbsp; <a href="${pageContext.request.contextPath}/admin">Quản lý admin</a>
 						</security:authorize>
                     </div>
                 </div>

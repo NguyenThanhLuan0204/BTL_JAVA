@@ -6,4 +6,5 @@ import N_DT23.entity.NguoiDung;
 
 public interface NguoiDungService {
     public List<NguoiDung> getDSNguoiDung();
+    public void addNguoiDung(NguoiDung dung);
 }

@@ -20,4 +20,11 @@ public class CTHoaDonServiceImpl implements CTHoaDonService {
         return ctHoaDonDAO.getDSCTHoaDon();
     }
 
+	@Override
+	@Transactional
+	public ChiTietHoaDon addHoaDon(ChiTietHoaDon hoaDon) {
+		ctHoaDonDAO.addCTHoaDon(hoaDon);
+		return hoaDon;
+	}
+
 }

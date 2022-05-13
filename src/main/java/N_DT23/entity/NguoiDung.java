@@ -33,7 +33,7 @@ public class NguoiDung implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "email", nullable = false, unique = true, columnDefinition = "VARCHAR(255)")
-    private TaiKhoan taiKhoan;
+   private TaiKhoan taiKhoan;
 
     @OneToMany(mappedBy = "nguoiDung", fetch = FetchType.LAZY)
     private Set<HoaDon> hoaDon;
@@ -65,14 +65,31 @@ public class NguoiDung implements Serializable {
         this.taiKhoan = taiKhoan;
     }
 
-    public NguoiDung(String tenND, String diaChi, String sdt, TaiKhoan taiKhoan) {
+    public NguoiDung(String tenND, String diaChi, String sdt,TaiKhoan taiKhoan) {
         this.tenND = tenND;
         this.diaChi = diaChi;
         this.sdt = sdt;
         this.taiKhoan = taiKhoan;
     }
+    
 
-    public int getMaND() {
+    public NguoiDung(String tenND, String diaChi, String sdt, Set<HoaDon> hoaDon) {
+		super();
+		this.tenND = tenND;
+		this.diaChi = diaChi;
+		this.sdt = sdt;
+		this.hoaDon = hoaDon;
+	}
+
+	public NguoiDung( String tenND, String diaChi, String sdt) {
+		super();
+		
+		this.tenND = tenND;
+		this.diaChi = diaChi;
+		this.sdt = sdt;
+	}
+
+	public int getMaND() {
         return maND;
     }
 
@@ -108,8 +125,12 @@ public class NguoiDung implements Serializable {
         return taiKhoan;
     }
 
-    public void setTaiKhoan(TaiKhoan taiKhoan) {
-        this.taiKhoan = taiKhoan;
-    }
+	public void setTaiKhoan(TaiKhoan taiKhoan) {
+		this.taiKhoan = taiKhoan;
+	}
+
+	
+
+   
 
 }

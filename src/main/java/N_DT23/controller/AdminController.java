@@ -33,6 +33,8 @@ import N_DT23.entity.TaiKhoan;
 @RequestMapping("/admin")
 public class AdminController {
 	@Autowired
+	private NguoiDungService nguoiDungService;
+	@Autowired
 	private SanPhamService sanPhamService;
 	@Autowired
 	private SanPhamDAO sanPhamDAO;
@@ -45,6 +47,7 @@ public class AdminController {
 	@GetMapping("/user")
 	public String user(Model model) {
 		List<NguoiDung> users = new ArrayList<NguoiDung>();
+		users=nguoiDungService.getDSNguoiDung();
 		users.add(new NguoiDung("Trần Văn A", "TP.HCM", "0987654321", new TaiKhoan("tranvana@gmail.com", "123456")));
 		users.add(new NguoiDung("Trần Văn B", "TP.HCM", "0987654321", new TaiKhoan("tranvanb@gmail.com", "123456")));
 		users.add(new NguoiDung("Trần Văn C", "Hà Nội", "0987654321", new TaiKhoan("tranvanc@gmail.com", "123456")));
@@ -124,7 +127,8 @@ public class AdminController {
       //   create model attribute to bind form data
         SanPham sanPham = new SanPham();
         theModel.addAttribute("product", sanPham);
-        return "admin/product-form";    }  
+        return "admin/product-form";    } 
+	
 	
 	
 }

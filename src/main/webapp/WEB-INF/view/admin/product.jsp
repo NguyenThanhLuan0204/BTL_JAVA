@@ -104,13 +104,7 @@
 															<c:param name="maSp" value="${sanPham.maSp} " />
 															
 														</c:url>
-<<<<<<< HEAD
 													<a href="${deleteUrl}">Xóa</a>										
-=======
-														
-												
-													>Xóa</button>										
->>>>>>> parent of a529f8e (Dạ khi nào có bản cập nhật mới thì máy sẽ thông báo trên thanh trạng thái cho anh cập nhật, còn thời gian cụ thể khi nào cập nhật thi do hãng quyết định, nên bên em không có thông tin cụ thể, mong anh thông cảm về sự bất tiện này ạ.)
 												</td>
 											</tr>
 										</c:forEach>

@@ -20,4 +20,11 @@ public class TaiKhoanServiceImpl implements TaiKhoanService {
         return TaiKhoanDAO.getDSTaiKhoan();
     }
 
+	@Override
+	@Transactional
+	public void addTaiKhoan(TaiKhoan khoan) {
+		 TaiKhoanDAO.addTaiKhoan(khoan);
+		
+	}
+
 }

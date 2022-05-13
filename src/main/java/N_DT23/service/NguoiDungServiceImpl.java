@@ -20,4 +20,11 @@ public class NguoiDungServiceImpl implements NguoiDungService {
         return NguoiDungDAO.getDSNguoiDung();
     }
 
+	@Override
+	 @Transactional
+	public void addNguoiDung(NguoiDung dung) {
+		NguoiDungDAO.addNguoiDung(dung);
+		
+	}
+
 }

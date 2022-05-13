@@ -27,7 +27,7 @@ public class TaiKhoan implements Serializable {
     @JoinColumn(name = "maChucVu", nullable = false, columnDefinition = "INT")
     private ChucVu chucVu;
 
-    @OneToOne(mappedBy = "taiKhoan", cascade = CascadeType.ALL)
+  //  @OneToOne(mappedBy = "taiKhoan", cascade = CascadeType.ALL)
     private NguoiDung nguoiDung;
 
     public TaiKhoan() {
